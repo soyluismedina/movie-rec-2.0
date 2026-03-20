@@ -12,20 +12,20 @@ function FormSearch() {
 
   return (
     <form
-      className="mt-8 flex items-center mx-auto bg-white/95 backdrop-blur-sm py-3 px-4 gap-4 rounded-full max-w-md shadow-xl hover:shadow-2xl transition-shadow duration-300"
+      className="mt-6 flex items-center mx-auto bg-white/90 py-2 px-3 gap-3 rounded-full max-w-md"
       onSubmit={handleSubmit}
     >
-      <BsSearch className="text-red-500 w-6 h-6" />
+      <BsSearch className="text-gray-500 w-5 h-5" />
       <input
         type="text"
         name="search"
         id="search"
-        className="w-full outline-none text-gray-800 text-lg font-medium placeholder-gray-500"
+        className="w-full outline-none text-gray-700 text-base font-normal placeholder-gray-400"
         placeholder="Search for a movie..."
       />
       <button
         type="submit"
-        className="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+        className="text-gray-600 hover:text-red-500 font-medium text-sm transition-colors duration-200"
       >
         Search
       </button>

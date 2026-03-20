@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Poster({ id, title, poster_path, vote_average }) {
   return (
     <Link href={`/movie-detail/${id}`} key={id} prefetch>
-      <div className="group relative overflow-hidden rounded-lg shadow-md transition-all duration-200 cursor-pointer">
+      <div className="group relative overflow-hidden rounded-lg transition-all duration-200 cursor-pointer">
         <Image
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}
           alt={`Image of the ${title}`}
@@ -12,8 +12,8 @@ export default function Poster({ id, title, poster_path, vote_average }) {
           height="375"
           className="w-full h-auto object-cover transition-all duration-200"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-200" />
-        <div className="absolute bottom-2 left-2 right-2 text-white text-center font-medium truncate bg-black/20 backdrop-blur-sm rounded px-2 py-1">
+        <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-200" />
+        <div className="absolute bottom-1 left-1 right-1 text-white text-xs font-medium truncate bg-black/15 rounded px-1 py-0.5">
           {title}
         </div>
         <span

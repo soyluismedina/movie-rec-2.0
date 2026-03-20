@@ -13,18 +13,18 @@ export default function ListOfMovies({
 
   return (
     movies && (
-      <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-16">
-        <div className="flex justify-between items-center mb-8 w-11/12 max-w-7xl mx-auto">
+      <section className="py-12">
+        <div className="flex justify-between items-center mb-6 w-11/12 max-w-7xl mx-auto">
           <div className="flex items-center gap-3">
-            <BiData className="text-red-500 w-6 h-6" />
-            <h2 className="font-bold text-2xl md:text-3xl text-gray-800">
+            <BiData className="text-red-500 w-5 h-5" />
+            <h2 className="font-semibold text-lg md:text-xl text-gray-700">
               {title}
             </h2>
           </div>
           {viewAll && (
-            <div className="flex items-center gap-2 text-red-500 hover:text-red-600 cursor-pointer transition-colors duration-300">
-              <span className="font-medium">View All</span>
-              <HiOutlineArrowNarrowRight className="w-5 h-5" />
+            <div className="flex items-center gap-2 text-gray-600 hover:text-red-500 cursor-pointer transition-colors duration-200">
+              <span className="text-sm">View All</span>
+              <HiOutlineArrowNarrowRight className="w-4 h-4" />
             </div>
           )}
         </div>
@@ -34,7 +34,7 @@ export default function ListOfMovies({
               key={id}
               href={`/movie-detail/${id}`}
               prefetch
-              className="group relative overflow-hidden rounded-lg shadow-md transition-all duration-200"
+              className="group relative overflow-hidden rounded-lg transition-all duration-200"
             >
               <Image
                 className="w-full h-auto object-cover transition-all duration-200"
@@ -43,8 +43,8 @@ export default function ListOfMovies({
                 src={`https://image.tmdb.org/t/p/w500${poster_path}`}
                 alt={`Poster of the movie ${title}`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-200" />
-              <div className="absolute bottom-2 left-2 right-2 text-white text-sm font-medium truncate bg-black/20 backdrop-blur-sm rounded px-2 py-1">
+              <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-200" />
+              <div className="absolute bottom-1 left-1 right-1 text-white text-xs font-medium truncate bg-black/15 rounded px-1 py-0.5">
                 {title}
               </div>
             </Link>

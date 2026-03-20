@@ -1,6 +1,6 @@
-import ListOfMovies from "../../../components/ListOfMovies";
-import DetailView from "../../../modules/details/details";
-import { getMovieDetail, getSimilarMovies } from "../../../services";
+import ListOfMovies from "@components/ListOfMovies";
+import DetailView from "@modules/details/details";
+import { getMovieDetail, getSimilarMovies } from "@services/index";
 import { Suspense } from "react";
 
 async function MovieDetails({ id }: { id: string }) {

@@ -1,6 +1,6 @@
 "use client";
+import Nav from "@components/Nav";
 import Image from "next/image";
-import Nav from "../../components/Nav";
 import { useRouter } from "next/navigation";
 
 export default function DetailView({ movieDetails }) {
@@ -26,9 +26,9 @@ export default function DetailView({ movieDetails }) {
         <button
           type="button"
           onClick={handleBack}
-          className="bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl z-20"
+          className="text-gray-600 hover:text-red-500 font-medium text-sm transition-colors duration-200 cursor-pointer z-20"
         >
-          <span className="text-sm">Back</span>
+          ← Back
         </button>
       </div>
       <section className="grid place-content-center md:grid-cols-2 mt-12 mx-auto max-w-6xl gap-8">
@@ -42,11 +42,11 @@ export default function DetailView({ movieDetails }) {
               className="w-full h-auto object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-200" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-200" />
           </div>
         </div>
         <div className="text-white z-20 mt-5 pb-10 md:mt-0">
-          <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-center mb-4 text-shadow-lg">
+          <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl text-center mb-3">
             {movieDetails.title}
           </h1>
           <div className="mt-4 flex flex-col gap-4 w-10/12 mx-auto">
@@ -62,38 +62,40 @@ export default function DetailView({ movieDetails }) {
                 ))}
               </div>
             )}
-            <div className="grid grid-cols-2 gap-4 text-lg">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
-                <span className="font-semibold">Release Date:</span>
-                <p className="text-white/80">{movieDetails.release_date}</p>
+            <div className="grid grid-cols-2 gap-3 text-sm">
+              <div className="bg-gray-100/50 rounded-lg p-2">
+                <span className="font-medium text-gray-600">Release:</span>
+                <p className="text-gray-700">{movieDetails.release_date}</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
-                <span className="font-semibold">Duration:</span>
-                <p className="text-white/80">{movieDetails.runtime} min</p>
+              <div className="bg-gray-100/50 rounded-lg p-2">
+                <span className="font-medium text-gray-600">Duration:</span>
+                <p className="text-gray-700">{movieDetails.runtime} min</p>
               </div>
             </div>
-            <div className="mt-4 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="flex items-center justify-center mb-2">
-                <span className="text-3xl">
+            <div className="mt-3 bg-gray-100/50 rounded-lg p-3">
+              <div className="flex items-center justify-center mb-1">
+                <span className="text-lg">
                   {"★"
                     .repeat(Math.round(movieDetails.vote_average / 2))
                     .padEnd(5, "☆")}
                 </span>
-                <span className="ml-2 text-xl font-bold text-yellow-400">
+                <span className="ml-2 text-sm font-medium text-gray-600">
                   {movieDetails.vote_average.toFixed(1)}/10
                 </span>
               </div>
             </div>
-            <div className="mt-6 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <h2 className="font-semibold text-xl mb-2">Overview</h2>
-              <p className="text-white/90 leading-relaxed">
+            <div className="mt-4 bg-gray-100/50 rounded-lg p-3">
+              <h2 className="font-medium text-sm mb-1 text-gray-600">
+                Overview
+              </h2>
+              <p className="text-gray-700 text-sm leading-relaxed">
                 {movieDetails.overview}
               </p>
             </div>
           </div>
         </div>
       </section>
-      <div className="absolute top-0 right-0 h-full w-full z-10 bg-linear-to-t from-black via-black/80 to-transparent" />
+      <div className="absolute top-0 right-0 h-full w-full z-10 bg-linear-to-t from-black via-black/60 to-transparent" />
     </div>
   );
 }

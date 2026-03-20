@@ -41,48 +41,48 @@ export default function Footer({ popularMovies }) {
           </ol>
         </div>
         <div className="z-20 flex flex-col">
-          <h3 className="font-bold text-2xl text-white text-center mb-3">
+          <h3 className="font-semibold text-lg text-white text-center mb-3">
             Create Account
           </h3>
-          <form className="flex flex-col gap-3 sm:grid ">
+          <form className="flex flex-col gap-2 sm:grid">
             <input
               type="text"
               name="first"
               id="first"
               placeholder="First Name"
-              className="outline-none px-4 py-3 rounded-lg w-full bg-white/90 text-gray-800 placeholder-gray-600 focus:bg-white focus:ring-2 focus:ring-red-500 focus:shadow-lg transition-all duration-300 shadow-md"
+              className="outline-none px-3 py-2 rounded-lg w-full bg-white/90 text-gray-700 placeholder-gray-500 focus:bg-white transition-all duration-200"
             />
             <input
               type="text"
               name="last"
               id="last"
               placeholder="Last Name"
-              className="outline-none px-4 py-3 rounded-lg w-full bg-white/90 text-gray-800 placeholder-gray-600 focus:bg-white focus:ring-2 focus:ring-red-500 focus:shadow-lg transition-all duration-300 shadow-md"
+              className="outline-none px-3 py-2 rounded-lg w-full bg-white/90 text-gray-700 placeholder-gray-500 focus:bg-white transition-all duration-200"
             />
             <input
               type="email"
               name="email"
               id="email"
               placeholder="Email Address"
-              className="outline-none px-4 py-3 rounded-lg w-full bg-white/90 text-gray-800 placeholder-gray-600 focus:bg-white focus:ring-2 focus:ring-red-500 focus:shadow-lg transition-all duration-300 shadow-md"
+              className="outline-none px-3 py-2 rounded-lg w-full bg-white/90 text-gray-700 placeholder-gray-500 focus:bg-white transition-all duration-200"
             />
             <input
               type="password"
               name="password"
               id="password"
               placeholder="Password"
-              className="outline-none px-4 py-3 rounded-lg w-full bg-white/90 text-gray-800 placeholder-gray-600 focus:bg-white focus:ring-2 focus:ring-red-500 focus:shadow-lg transition-all duration-300 shadow-md"
+              className="outline-none px-3 py-2 rounded-lg w-full bg-white/90 text-gray-700 placeholder-gray-500 focus:bg-white transition-all duration-200"
             />
-            <div className="flex justify-between items-center pt-3 gap-3 col-span-2">
-              <p className="text-white text-sm font-semibold">
+            <div className="flex justify-between items-center pt-2 gap-2 col-span-2">
+              <p className="text-white text-xs font-medium">
                 Already have an account?
-                <span className="text-red-500 cursor-pointer"> Sign In</span>
+                <span className="text-red-500 cursor-pointer">Sign In</span>
               </p>
               <button
-                className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="text-gray-600 hover:text-red-500 font-medium text-sm transition-colors duration-200"
                 type="submit"
               >
-                <p className="text-sm">Create Account</p>
+                Create Account
               </button>
             </div>
           </form>

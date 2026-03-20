@@ -1,8 +1,7 @@
-import ListOfMovies from "../../components/ListOfMovies";
-import { getPopularMovies } from "../../services";
+import ListOfMovies from "@components/ListOfMovies";
+import Nav from "@components/Nav";
+import { getPopularMovies } from "@services/index";
 import { Suspense } from "react";
-import Nav from "../../components/Nav";
-import Link from "next/link";
 
 async function PopularMoviesContent() {
   const popularMovies = await getPopularMovies();
@@ -28,21 +27,15 @@ export default async function PopularMoviesPage() {
     <main className="suspense-content">
       <div className="w-11/12 max-w-7xl mx-auto">
         <Nav />
-        <div className="flex justify-between items-center mb-8 mt-8">
-          <div className="text-center flex-1">
-            <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent mb-2">
+        <div className="flex justify-center items-center mb-6 mt-8">
+          <div className="text-center">
+            <h1 className="font-semibold text-2xl md:text-3xl text-gray-800 mb-1">
               Popular Movies Collection
             </h1>
-            <p className="text-gray-600 text-base md:text-lg">
+            <p className="text-gray-600 text-sm md:text-base">
               Discover the most watched and loved movies worldwide
             </p>
           </div>
-          <Link
-            href="/"
-            className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-base"
-          >
-            ← Back to Home
-          </Link>
         </div>
       </div>
       <Suspense

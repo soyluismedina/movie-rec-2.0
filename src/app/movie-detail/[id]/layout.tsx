@@ -1,4 +1,4 @@
-import { getMovieDetail } from "../../../services";
+import { getMovieDetail } from "@services/index";
 
 export const generateMetadata = async ({
   params,

@@ -1,8 +1,8 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import ListOfMovies from "../components/ListOfMovies";
-import PopularMovies from "../components/PopularMovies";
-import { getPopularMovies, getPoster, getTrending } from "../services";
+import Footer from "@components/Footer";
+import Header from "@components/Header";
+import ListOfMovies from "@components/ListOfMovies";
+import PopularMovies from "@components/PopularMovies";
+import { getPopularMovies, getPoster, getTrending } from "@services/index";
 import { Suspense } from "react";
 
 async function HomePageContent() {
