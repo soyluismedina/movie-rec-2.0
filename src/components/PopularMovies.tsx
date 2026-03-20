@@ -1,10 +1,9 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { GoFlame } from "react-icons/go";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
-function PopularMovies({ popularMovies }) {
+export default function PopularMovies({ popularMovies }) {
   const justNivePopularMovies = popularMovies.results.slice(0, 9);
   return (
     <section className="w-9/12 mx-auto my-14 max-w-5xl">
@@ -35,5 +34,3 @@ function PopularMovies({ popularMovies }) {
     </section>
   );
 }
-
-export default PopularMovies;

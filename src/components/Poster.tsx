@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function Poster({ id, title, poster_path, vote_average }) {
+export default function Poster({ id, title, poster_path, vote_average }) {
   return (
     <Link href={`/movie-detail/${id}`} key={id} prefetch>
       <div className="hover:scale-105 transition-transform duration-200  flex flex-col items-center justify-center mx-auto cursor-pointer relative">
@@ -24,5 +24,3 @@ function Poster({ id, title, poster_path, vote_average }) {
     </Link>
   );
 }
-
-export default Poster;

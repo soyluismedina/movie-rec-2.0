@@ -1,18 +1,9 @@
-export const dynamic = "force-dynamic";
-export const dynamicParams = true;
 import ListOfMovies from "../../../components/ListOfMovies";
 import DetailView from "../../../modules/details/details";
 import { getMovieDetail, getSimilarMovies } from "../../../services";
 
-export const generateMetadata = async ({ params }) => {
-  const movieDetails = await getMovieDetail(params.id);
-  return {
-    title: `Movie Rec - ${movieDetails.title}`,
-    description: `Detail of the movie ${movieDetails.title}`,
-  };
-};
-
-export default async function MoviesDetail({ params }) {
+export default async function MoviesDetail(props: { params: { id: string } }) {
+  const params = await props.params;
   const [movieDetails, similarMovies] = await Promise.all([
     getMovieDetail(params.id),
     getSimilarMovies(params.id),

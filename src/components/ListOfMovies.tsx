@@ -1,10 +1,9 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { BiData } from "react-icons/bi";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
-function ListOfMovies({ movies, title, viewAll = false }) {
+export default function ListOfMovies({ movies, title, viewAll = false }) {
   const justSixMovies = movies && movies.results.slice(0, 6);
 
   return (
@@ -39,5 +38,3 @@ function ListOfMovies({ movies, title, viewAll = false }) {
     )
   );
 }
-
-export default ListOfMovies;

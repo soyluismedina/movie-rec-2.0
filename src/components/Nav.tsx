@@ -4,7 +4,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-function Nav() {
+export default function Nav() {
   const [isPath, setIsPath] = useState(null);
   const router = useRouter();
   const path = usePathname();
@@ -42,5 +42,3 @@ function Nav() {
     </div>
   );
 }
-
-export default Nav;

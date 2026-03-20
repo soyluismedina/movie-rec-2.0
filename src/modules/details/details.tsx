@@ -21,7 +21,7 @@ export default function DetailView({ movieDetails }) {
       className="h-auto min-h-screen bg-center bg-no-repeat relative bg-cover pt-10"
       style={bgImage}
     >
-      <div className="flex w-11/12 max-w-screen-xl mx-auto items-center justify-between">
+      <div className="flex w-11/12 max-w-7xl mx-auto items-center justify-between">
         <Nav />
         <button
           type="button"
@@ -31,12 +31,13 @@ export default function DetailView({ movieDetails }) {
           <p>Back</p>
         </button>
       </div>
-      <section className="grid place-content-center md:grid-cols-2 mt-20 mx-auto  max-w-5xl">
+      <section className="grid place-content-center md:grid-cols-2 mt-10 mx-auto  max-w-5xl">
         <div className="z-20 mx-auto">
           <Image
             src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
             alt={`Poster of the movie ${movieDetails.title}`}
             width={250}
+            className="h-auto w-auto"
             height={400}
             priority
           />

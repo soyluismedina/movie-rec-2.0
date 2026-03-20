@@ -3,7 +3,7 @@
 import FormSearch from "./FormSearch";
 import Nav from "./Nav";
 
-function Header({ poster }) {
+export default function Header({ poster }) {
   const bgImage = {
     backgroundImage:
       poster &&
@@ -14,7 +14,8 @@ function Header({ poster }) {
   };
   return (
     <header
-      className="h-[500px] relative flex flex-col text-white bg-center bg-no-repeat bg-cover"
+      suppressHydrationWarning
+      className="h-125 relative flex flex-col text-white bg-center bg-no-repeat bg-cover"
       style={bgImage}
     >
       <Nav />
@@ -31,5 +32,3 @@ function Header({ poster }) {
     </header>
   );
 }
-
-export default Header;

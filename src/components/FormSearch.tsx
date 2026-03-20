@@ -1,11 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { BsSearch } from "react-icons/bs";
-//TODO: modularizar todas las funciones dividido por vistas
 
 function FormSearch() {
   const router = useRouter();
-  //TODO: mejorar el manejo del form para validar que no se esta haciendo el submit sin tener un valor el input
   const handleSubmit = (event) => {
     event.preventDefault();
     const target = event.target.search.value;

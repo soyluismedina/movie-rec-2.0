@@ -1,19 +1,12 @@
-export const dynamic = "force-dynamic";
-export const dynamicParams = true;
-
 import FormSearch from "../../../components/FormSearch";
 import Nav from "../../../components/Nav";
 import SearchMovies from "../../../components/SearchMovies";
 import { getSearchMovie } from "../../../services";
 
-export function generateMetadata({ params }) {
-  return {
-    title: params.movie,
-    description: `Page of search of the movie ${params.movie}`,
-  };
-}
-
-export default async function MovieSearch({ params }) {
+export default async function MovieSearch(props: {
+  params: Promise<{ movie: string }>;
+}) {
+  const params = await props.params;
   const movieSearch = await getSearchMovie(params.movie);
 
   const bgImage = {

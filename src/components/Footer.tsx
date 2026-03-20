@@ -1,7 +1,7 @@
 "use client";
 import { MdDone } from "react-icons/md";
 
-function Footer({ popularMovies }) {
+export default function Footer({ popularMovies }) {
   const bgImage2 =
     popularMovies &&
     `url("https://image.tmdb.org/t/p/original${
@@ -13,6 +13,7 @@ function Footer({ popularMovies }) {
   return (
     <section
       className="h-auto py-20 bg-center bg-cover bg-no-repeat relative flex justify-center items-center "
+      suppressHydrationWarning
       style={{ backgroundImage: bgImage2 }}
     >
       <div className="max-w-5xl grid grid-cols-1 sm:grid-cols-2 w-9/12 mx-auto  place-content-center gap-10">
@@ -91,5 +92,3 @@ function Footer({ popularMovies }) {
     </section>
   );
 }
-
-export default Footer;
