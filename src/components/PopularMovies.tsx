@@ -6,28 +6,38 @@ import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 export default function PopularMovies({ popularMovies }) {
   const justNivePopularMovies = popularMovies.results.slice(0, 9);
   return (
-    <section className="w-9/12 mx-auto my-14 max-w-5xl">
-      <div className="flex justify-between mb-4">
-        <div className="flex items-center gap-1">
-          <GoFlame className="text-red-400" />
-          <p className="font-bold">Popular Movies</p>
+    <section className="w-11/12 mx-auto my-16 max-w-7xl">
+      <div className="flex justify-between items-center mb-6">
+        <div className="flex items-center gap-3">
+          <GoFlame className="text-red-500 w-8 h-8" />
+          <h2 className="font-bold text-2xl md:text-3xl text-gray-800">
+            Popular Movies
+          </h2>
         </div>
-        <div className="flex items-center gap-1 text-gray-500 cursor-pointer">
-          <p className="font-light">View All</p>
-          <HiOutlineArrowNarrowRight />
+        <div className="flex items-center gap-2 text-red-500 hover:text-red-600 cursor-pointer transition-colors duration-300">
+          <span className="font-medium">View All</span>
+          <HiOutlineArrowNarrowRight className="w-5 h-5" />
         </div>
       </div>
-      <div className="grid  grid-rows-2 first grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 place-content-center">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 place-content-center">
         {justNivePopularMovies.map(({ id, poster_path, title }) => (
-          <Link key={id} href={`/movie-detail/${id}`} prefetch>
+          <Link
+            key={id}
+            href={`/movie-detail/${id}`}
+            prefetch
+            className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
             <Image
-              className="w-full object-contain hover:scale-105 duration-200 transition-transform"
-              key={id}
-              width={125}
-              height={200}
+              className="w-full h-auto object-cover group-hover:brightness-110 transition-all duration-300"
+              width={200}
+              height={300}
               src={`https://image.tmdb.org/t/p/w500${poster_path}`}
               alt={`Poster of the movie ${title}`}
             />
+            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute bottom-2 left-2 right-2 text-white text-sm font-medium truncate bg-black/30 backdrop-blur-sm rounded px-2 py-1">
+              {title}
+            </div>
           </Link>
         ))}
       </div>
