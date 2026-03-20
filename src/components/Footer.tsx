@@ -50,36 +50,36 @@ export default function Footer({ popularMovies }) {
               name="first"
               id="first"
               placeholder="First Name"
-              className="outline-none px-2 py-1 rounded-sm w-full"
+              className="outline-none px-4 py-3 rounded-lg w-full bg-white/90 text-gray-800 placeholder-gray-600 focus:bg-white focus:ring-2 focus:ring-red-500 focus:shadow-lg transition-all duration-300 shadow-md"
             />
             <input
               type="text"
               name="last"
               id="last"
               placeholder="Last Name"
-              className="outline-none px-2 py-1 rounded-sm w-full"
+              className="outline-none px-4 py-3 rounded-lg w-full bg-white/90 text-gray-800 placeholder-gray-600 focus:bg-white focus:ring-2 focus:ring-red-500 focus:shadow-lg transition-all duration-300 shadow-md"
             />
             <input
               type="email"
               name="email"
               id="email"
               placeholder="Email Address"
-              className="outline-none px-2 py-1 rounded-sm w-full"
+              className="outline-none px-4 py-3 rounded-lg w-full bg-white/90 text-gray-800 placeholder-gray-600 focus:bg-white focus:ring-2 focus:ring-red-500 focus:shadow-lg transition-all duration-300 shadow-md"
             />
             <input
               type="password"
               name="password"
               id="password"
               placeholder="Password"
-              className="outline-none px-2 py-1 rounded-sm w-full"
+              className="outline-none px-4 py-3 rounded-lg w-full bg-white/90 text-gray-800 placeholder-gray-600 focus:bg-white focus:ring-2 focus:ring-red-500 focus:shadow-lg transition-all duration-300 shadow-md"
             />
             <div className="flex justify-between items-center pt-3 gap-3 col-span-2">
               <p className="text-white text-sm font-semibold">
                 Already have an account?
-                <span className="text-red-500 cursor-pointer">Sign In</span>
+                <span className="text-red-500 cursor-pointer"> Sign In</span>
               </p>
               <button
-                className="bg-red-500 rounded-2xl text-white py-1 px-1 sm:px-2 sm:py-2"
+                className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 type="submit"
               >
                 <p className="text-sm">Create Account</p>

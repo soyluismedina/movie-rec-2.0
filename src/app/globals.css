@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
+/* Loading Spinner Styles */
+.loading-spinner {
+  @apply flex items-center justify-center min-h-screen bg-gray-900 text-white;
+}
+
+.loading-spinner::after {
+  content: "";
+  @apply w-8 h-8 border-4 border-gray-300 border-t-blue-600 rounded-full animate-spin;
+  margin-left: 1rem;
+}
+
+/* Page-specific loading states */
+.page-loading {
+  @apply animate-pulse;
+}
+
+/* Smooth transitions for suspense boundaries */
+.suspense-content {
+  @apply transition-all duration-300 ease-in-out;
+}
+
 @layer utilities {
   .first a:nth-child(1) {
     grid-column: 1 / 3;

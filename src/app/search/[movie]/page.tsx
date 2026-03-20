@@ -2,12 +2,10 @@ import FormSearch from "../../../components/FormSearch";
 import Nav from "../../../components/Nav";
 import SearchMovies from "../../../components/SearchMovies";
 import { getSearchMovie } from "../../../services";
+import { Suspense } from "react";
 
-export default async function MovieSearch(props: {
-  params: Promise<{ movie: string }>;
-}) {
-  const params = await props.params;
-  const movieSearch = await getSearchMovie(params.movie);
+async function SearchResults({ movie }: { movie: string }) {
+  const movieSearch = await getSearchMovie(movie);
 
   const bgImage = {
     backgroundImage:
@@ -17,7 +15,7 @@ export default async function MovieSearch(props: {
   };
 
   return (
-    <main>
+    <>
       <div
         className="h-72 relative flex flex-col text-white bg-center bg-no-repeat bg-cover"
         style={bgImage}
@@ -26,7 +24,7 @@ export default async function MovieSearch(props: {
         <div className="flex flex-col w-10/12 mx-auto z-20">
           <FormSearch />
           <p className="mt-5 text-center">
-            Your search was <i>{`"${params.movie}"`}</i>
+            Your search was <i>{`"${decodeURIComponent(movie)}"`}</i>
           </p>
         </div>
         <div className="bg-[#00000080] absolute h-full w-full z-10 top-0 right-0" />
@@ -40,6 +38,22 @@ export default async function MovieSearch(props: {
           </p>
         </div>
       )}
+    </>
+  );
+}
+
+export default async function MovieSearch(props: {
+  params: Promise<{ movie: string }>;
+}) {
+  const params = await props.params;
+
+  return (
+    <main className="suspense-content">
+      <Suspense
+        fallback={<div className="loading-spinner">Searching movies...</div>}
+      >
+        <SearchResults movie={params.movie} />
+      </Suspense>
     </main>
   );
 }
