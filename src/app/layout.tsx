@@ -1,5 +1,4 @@
 import "./globals.css";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Suspense } from "react";
 
 export default function RootLayout({
@@ -14,7 +13,6 @@ export default function RootLayout({
           {children}
         </Suspense>
       </body>
-      <SpeedInsights />
     </html>
   );
 }
