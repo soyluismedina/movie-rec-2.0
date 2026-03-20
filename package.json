@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.2.2",
-    "@vercel/speed-insights": "^2.0.0",
     "axios": "^1.13.6",
     "eslint": "10.0.3",
     "eslint-config-next": "16.2.0",
