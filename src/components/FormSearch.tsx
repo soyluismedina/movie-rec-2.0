@@ -1,11 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { BsSearch } from "react-icons/bs";
-//TODO: modularizar todas las funciones dividido por vistas
 
 function FormSearch() {
   const router = useRouter();
-  //TODO: mejorar el manejo del form para validar que no se esta haciendo el submit sin tener un valor el input
   const handleSubmit = (event) => {
     event.preventDefault();
     const target = event.target.search.value;
@@ -14,17 +12,23 @@ function FormSearch() {
 
   return (
     <form
-      className="mt-10 flex items-center mx-auto  bg-white py-2 px-2 gap-3 rounded-3xl max-w-sm"
+      className="mt-6 flex items-center mx-auto bg-white/90 py-2 px-3 gap-3 rounded-full max-w-md"
       onSubmit={handleSubmit}
     >
-      <BsSearch className="text-black w-10 " />
+      <BsSearch className="text-gray-500 w-5 h-5" />
       <input
         type="text"
         name="search"
         id="search"
-        className="w-9/12 outline-none text-black"
-        placeholder="Search for a movie"
+        className="w-full outline-none text-gray-700 text-base font-normal placeholder-gray-400"
+        placeholder="Search for a movie..."
       />
+      <button
+        type="submit"
+        className="text-gray-600 hover:text-red-500 font-medium text-sm transition-colors duration-200"
+      >
+        Search
+      </button>
     </form>
   );
 }
