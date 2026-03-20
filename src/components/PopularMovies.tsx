@@ -15,7 +15,9 @@ export default function PopularMovies({ popularMovies }) {
           </h2>
         </div>
         <div className="flex items-center gap-2 text-red-500 hover:text-red-600 cursor-pointer transition-colors duration-300">
-          <span className="font-medium">View All</span>
+          <Link href="/popular-movies" className="font-medium">
+            View All
+          </Link>
           <HiOutlineArrowNarrowRight className="w-5 h-5" />
         </div>
       </div>
@@ -25,17 +27,17 @@ export default function PopularMovies({ popularMovies }) {
             key={id}
             href={`/movie-detail/${id}`}
             prefetch
-            className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            className="group relative overflow-hidden rounded-lg shadow-md transition-all duration-200"
           >
             <Image
-              className="w-full h-auto object-cover group-hover:brightness-110 transition-all duration-300"
+              className="w-full h-auto object-cover transition-all duration-200"
               width={200}
               height={300}
               src={`https://image.tmdb.org/t/p/w500${poster_path}`}
               alt={`Poster of the movie ${title}`}
             />
-            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="absolute bottom-2 left-2 right-2 text-white text-sm font-medium truncate bg-black/30 backdrop-blur-sm rounded px-2 py-1">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-200" />
+            <div className="absolute bottom-2 left-2 right-2 text-white text-sm font-medium truncate bg-black/20 backdrop-blur-sm rounded px-2 py-1">
               {title}
             </div>
           </Link>

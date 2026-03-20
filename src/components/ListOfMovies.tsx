@@ -3,12 +3,17 @@ import Link from "next/link";
 import { BiData } from "react-icons/bi";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
-export default function ListOfMovies({ movies, title, viewAll = false }) {
-  const justSixMovies = movies && movies.results.slice(0, 6);
+export default function ListOfMovies({
+  movies,
+  title,
+  viewAll = false,
+  limit = 6,
+}) {
+  const displayMovies = movies && movies.results.slice(0, limit);
 
   return (
     movies && (
-      <section className="bg-linear-to-br from-gray-50 to-gray-100 py-16">
+      <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-16">
         <div className="flex justify-between items-center mb-8 w-11/12 max-w-7xl mx-auto">
           <div className="flex items-center gap-3">
             <BiData className="text-red-500 w-6 h-6" />
@@ -24,21 +29,24 @@ export default function ListOfMovies({ movies, title, viewAll = false }) {
           )}
         </div>
         <div className="grid w-11/12 max-w-7xl mx-auto grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 place-content-center">
-          {justSixMovies.map(({ id, poster_path }) => (
+          {displayMovies.map(({ id, poster_path, title }) => (
             <Link
               key={id}
               href={`/movie-detail/${id}`}
               prefetch
-              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="group relative overflow-hidden rounded-lg shadow-md transition-all duration-200"
             >
               <Image
-                className="w-full h-auto object-cover group-hover:brightness-110 transition-all duration-300"
+                className="w-full h-auto object-cover transition-all duration-200"
                 width={200}
                 height={300}
                 src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-                alt={`Poster of the movie ${id}`}
+                alt={`Poster of the movie ${title}`}
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-200" />
+              <div className="absolute bottom-2 left-2 right-2 text-white text-sm font-medium truncate bg-black/20 backdrop-blur-sm rounded px-2 py-1">
+                {title}
+              </div>
             </Link>
           ))}
         </div>

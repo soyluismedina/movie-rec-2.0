@@ -33,7 +33,7 @@ export default function DetailView({ movieDetails }) {
       </div>
       <section className="grid place-content-center md:grid-cols-2 mt-12 mx-auto max-w-6xl gap-8">
         <div className="z-20 mx-auto group">
-          <div className="relative overflow-hidden rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+          <div className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-200">
             <Image
               src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
               alt={`Poster of the movie ${movieDetails.title}`}
@@ -42,7 +42,7 @@ export default function DetailView({ movieDetails }) {
               className="w-full h-auto object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-200" />
           </div>
         </div>
         <div className="text-white z-20 mt-5 pb-10 md:mt-0">
